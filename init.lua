@@ -1,2 +1,3 @@
-require('options')
-require('mappings')
+require('core/options')
+require('core/mappings')
+require('lazy')
