@@ -3,6 +3,7 @@ local opts = {
     noremap = true,      -- non-recursive
     silent = true,       -- do not show message
 }
+vim.g.mapleader = " "
 local map = vim.keymap
 
 -----------------
