@@ -11,7 +11,8 @@ return {
       vim.g.loaded_netrwPlugin = 1
       require("nvim-tree").setup({
           filters = {
-              dotfiles = true,
+                dotfiles = true,
+                git_ignored = false,
           }
       })
     end,
