@@ -10,3 +10,4 @@ My personal Nvim config (Work In Progress)
 - [ ] Install Telescope
 - [ ] Install and config code completion
 - [ ] Install and config LSP (for C/C++/Python)
+- [ ] Install and config DAP (for C/C++/Python)
