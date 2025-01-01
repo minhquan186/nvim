@@ -1,13 +1,13 @@
 local o = vim.opt
 
-o.clipboard = 'unnamedplus'   -- use system clipboard 
+o.clipboard = 'unnamedplus'   -- use system clipboard
 o.completeopt = {'menu', 'menuone', 'noselect'}
 o.mouse = 'a'                 -- allow the mouse to be used in Nvim
 
 -- Tab
-o.tabstop = 4                 -- number of visual spaces per TAB
-o.softtabstop = 4             -- number of spacesin tab when editing
-o.shiftwidth = 4              -- insert 4 spaces on a tab
+o.tabstop = 2                 -- number of visual spaces per TAB
+o.softtabstop = 2             -- number of spacesin tab when editing
+o.shiftwidth = 2              -- insert 4 spaces on a tab
 o.expandtab = true            -- tabs are spaces, mainly because of python
 
 -- UI config

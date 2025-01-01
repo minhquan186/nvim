@@ -1,7 +1,7 @@
 return {
     "nvim-lualine/lualine.nvim",
-    dependencies = { 
-        "nvim-tree/nvim-web-devicons" 
+    dependencies = {
+        "nvim-tree/nvim-web-devicons"
     },
     config = function()
         require('lualine').setup({
@@ -17,7 +17,7 @@ return {
             ignore_focus = {},
             always_divide_middle = true,
             always_show_tabline = true,
-            globalstatus = false,
+            globalstatus = true,
             refresh = {
               statusline = 100,
               tabline = 100,
@@ -25,15 +25,15 @@ return {
             }
           },
           sections = {
-            lualine_a = { 
-                { 
-                    'mode', 
-                    seperator = 
-                    { 
-                        left = '' 
+            lualine_a = {
+                {
+                    'mode',
+                    seperator =
+                    {
+                        left = ''
                     },
                     right_padding = 2
-                } 
+                }
             },
             lualine_b = {'branch', 'diff'},
             lualine_c = {'filename'},
@@ -62,7 +62,7 @@ return {
           winbar = {},
           inactive_winbar = {},
           extensions = {
-            "nvim-tree"  
+            "nvim-tree"
           }
         })
     end
