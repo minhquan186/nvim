@@ -9,6 +9,6 @@ My personal Nvim config (Work In Progress)
 - [ ] Add terminal support
 - [x] Install Telescope
 - [x] Add bufferline
-- [ ] Install and config code completion
+- [x] Install and config code completion
 - [ ] Install and config LSP (for C/C++/Python)
 - [ ] Install and config DAP (for C/C++/Python)
