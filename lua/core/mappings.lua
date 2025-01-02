@@ -15,9 +15,6 @@ map.set({ "n", "i", "v" }, "<A-z>", function()
     vim.cmd("set wrap!")
 end, { desc = "Toggle linewrapping" })
 
--- NvimTree
-map.set("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", { desc = "nvimtree toggle window" })
-
 -----------------
 -- Normal mode --
 -----------------
@@ -52,9 +49,13 @@ map.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in
 map.set("n", "<leader>n", "<cmd>set nu!<CR>", { desc = "toggle line number" })
 map.set("n", "<leader>rn", "<cmd>set rnu!<CR>", { desc = "toggle relative number" })
 
--- nvimtree
+-- NvimTree
 map.set("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", { desc = "nvimtree toggle window" })
 map.set("n", "<leader>e", "<cmd>NvimTreeFocus<CR>", { desc = "nvimtree focus window" })
+
+-- Bufferline
+map.set("n", "<S-l>", "<CMD>BufferLineCycleNext<CR>", { desc = "Next Buffer" })
+map.set("n", "<S-h>", "<CMD>BufferLineCyclePrev<CR>", { desc = "Previous Buffer" })
 
 -----------------
 -- Visual mode --

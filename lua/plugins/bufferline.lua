@@ -2,12 +2,12 @@ return {
   "akinsho/bufferline.nvim",
   version = "*",
   dependencies = {
-    "nvim-tree/nvim-web-devicons"
+    "nvim-tree/nvim-web-devicons",
   },
-  config = function()
+  config = function ()
     require("bufferline").setup({
       options = {
-        mode = "tabs",
+        mode = "buffers",
         separator_style = "slope",
         close_command = "bdelete! %d",
         buffer_close_icon = '󰅖',
@@ -23,12 +23,21 @@ return {
         show_tab_indicators = true ,
         show_duplicate_prefix = true,
         auto_toggle_bufferline = true ,
+        sort_by = 'insert_after_current',
         hover = {
             enabled = true,
             delay = 200,
             reveal = {'close'}
         },
-        sort_by = 'insert_after_current'
+        offsets = {
+          {
+            filetype = "NvimTree",
+            text = "File Explorer",
+            highlight = "Directory",
+            separator = true,
+            text_align = "center"
+          }
+        },
       }
     })
   end
