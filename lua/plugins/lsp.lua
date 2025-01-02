@@ -23,11 +23,11 @@ return {
       "neovim/nvim-lspconfig",
       lazy = false,
       config = function ()
-  
+
         local capabilities = require("cmp_nvim_lsp").default_capabilities()
-  
+
         local lspconfig = require("lspconfig")
-  
+
         -- Lua LSP
         require("neodev").setup()
         lspconfig.lua_ls.setup({
@@ -40,7 +40,27 @@ return {
             }
           }
         })
-  
+
+        -- Python LSP
+        lspconfig.pylsp.setup({
+          capabilities = capabilities,
+          settings = {
+            pylsp = {
+              plugins = {
+                pycodestyle = {
+                  ignore = {"W391"},
+                  maxLineLength = 100,
+                }
+              }
+            }
+          }
+        })
+
+        -- C/C++ LSP (clangd)
+        lspconfig.clangd.setup({
+          capabilities = capabilities,
+        })
+
         -- Keymapping
         vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
         vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
@@ -49,4 +69,4 @@ return {
       end
     },
   }
-  
+

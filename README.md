@@ -10,5 +10,5 @@ My personal Nvim config (Work In Progress)
 - [x] Install Telescope
 - [x] Add bufferline
 - [x] Install and config code completion
-- [ ] Install and config LSP (for C/C++/Python)
+- [x] Install and config LSP (for C/C++/Python)
 - [ ] Install and config DAP (for C/C++/Python)
