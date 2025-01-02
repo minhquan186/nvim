@@ -9,6 +9,7 @@ return {
       options = {
         mode = "buffers",
         separator_style = "slope",
+        indicator = { style = "underline" },
         close_command = "bdelete! %d",
         buffer_close_icon = '󰅖',
         modified_icon = '●',

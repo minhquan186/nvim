@@ -21,9 +21,3 @@ autocmd("BufReadPost", {
     end
   end,
 })
-
--- Unfold all when open file
-autocmd("BufReadPost", {
-  pattern = "*",
-  command = ":%foldopen!"
-})
