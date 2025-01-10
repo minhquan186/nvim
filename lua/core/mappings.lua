@@ -57,6 +57,9 @@ map.set("n", "<leader>e", "<cmd>NvimTreeFocus<CR>", { desc = "nvimtree focus win
 map.set("n", "<S-l>", "<CMD>BufferLineCycleNext<CR>", { desc = "Next Buffer" })
 map.set("n", "<S-h>", "<CMD>BufferLineCyclePrev<CR>", { desc = "Previous Buffer" })
 
+-- Buffer management
+map.set("n", "<leader>x", "<cmd>bd<CR>", { desc = "Close Buffer" })
+
 -----------------
 -- Visual mode --
 -----------------
