@@ -3,16 +3,19 @@ return {
       "mfussenegger/nvim-dap",
       recommended = true,
       desc = "Debugging support. Requires language specific adapters to be configured. (see lang extras)",
-  
+
       dependencies = {
-        "rcarriga/nvim-dap-ui",
+        {
+	  "rcarriga/nvim-dap-ui",
+	  dependencies = { "nvim-neotest/nvim-nio" }
+	},
         -- virtual text for the debugger
         {
           "theHamsta/nvim-dap-virtual-text",
           opts = {},
         },
       },
-  
+
       -- stylua: ignore
       keys = {
         { "<leader>dB", function() require("dap").set_breakpoint(vim.fn.input('Breakpoint condition: ')) end, desc = "Breakpoint Condition" },
@@ -34,10 +37,10 @@ return {
         { "<leader>dw", function() require("dap.ui.widgets").hover() end, desc = "Widgets" },
         { "<leader>du", function() require("dap.ui.widgets").hover() end, desc = "Widgets" },
       },
-  
+
       config = function()
         vim.api.nvim_set_hl(0, "DapStoppedLine", { default = true, link = "Visual" })
-  
+
         local dap, dapui = require 'dap', require 'dapui'
         dap.listeners.before.attach.dapui_config = function()
           dapui.open()
@@ -51,7 +54,7 @@ return {
         dap.listeners.before.event_exited.dapui_config = function()
           dapui.close()
         end
-  
+
         -- setup dap config by VsCode launch.json file
         local vscode = require("dap.ext.vscode")
         local json = require("plenary.json")
@@ -67,4 +70,4 @@ return {
       end
     },
   }
-  
+
