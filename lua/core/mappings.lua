@@ -15,6 +15,21 @@ map.set({ "n", "i", "v" }, "<A-z>", function()
     vim.cmd("set wrap!")
 end, { desc = "Toggle linewrapping" })
 
+-- Toggle terminal
+map.set({"n", "i", "v"}, "<A-i>", "<cmd>ToggleTerm direction=float<cr>", { desc = "Toggle floating terminal" })
+map.set({"n", "i", "v"}, "<A-h>", "<cmd>ToggleTerm size=10 direction=horizontal<cr>", { desc = "Toggle horizontal terminal" })
+map.set({"n", "i", "v"}, "<A-v>", "<cmd>ToggleTerm size=80 direction=vertical<cr>", { desc = "Toggle vertical terminal" })
+
+function _G.set_terminal_keymaps()
+  vim.api.nvim_buf_set_keymap(0, 't', '<esc>', [[<C-\><C-n>]], opts)
+  vim.api.nvim_buf_set_keymap(0, 't', 'jk', [[<C-\><C-n>]], opts)
+  vim.api.nvim_buf_set_keymap(0, 't', '<C-h>', [[<C-\><C-n><C-W>h]], opts)
+  vim.api.nvim_buf_set_keymap(0, 't', '<C-j>', [[<C-\><C-n><C-W>j]], opts)
+  vim.api.nvim_buf_set_keymap(0, 't', '<C-k>', [[<C-\><C-n><C-W>k]], opts)
+  vim.api.nvim_buf_set_keymap(0, 't', '<C-l>', [[<C-\><C-n><C-W>l]], opts)
+end
+
+  vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
 -----------------
 -- Normal mode --
 -----------------

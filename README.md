@@ -6,7 +6,7 @@ My personal Nvim config (Work In Progress)
 - [x] Install whichkey
 - [x] Install nvim-tree
 - [x] Install treesitter
-- [ ] Add terminal support
+- [x] Add terminal support
 - [x] Install Telescope
 - [x] Add bufferline
 - [x] Install and config code completion
