@@ -1,7 +1,7 @@
 -- define common options
 local opts = {
-    noremap = true,      -- non-recursive
-    silent = true,       -- do not show message
+  noremap = true,      -- non-recursive
+  silent = true,       -- do not show message
 }
 vim.g.mapleader = " "
 local map = vim.keymap
@@ -12,7 +12,7 @@ local map = vim.keymap
 
 -- Line wrapping
 map.set({ "n", "i", "v" }, "<A-z>", function()
-    vim.cmd("set wrap!")
+  vim.cmd("set wrap!")
 end, { desc = "Toggle linewrapping" })
 
 -- Toggle terminal
@@ -21,15 +21,15 @@ map.set({"n", "i", "v"}, "<A-h>", "<cmd>ToggleTerm size=10 direction=horizontal<
 map.set({"n", "i", "v"}, "<A-v>", "<cmd>ToggleTerm size=80 direction=vertical<cr>", { desc = "Toggle vertical terminal" })
 
 function _G.set_terminal_keymaps()
-  vim.api.nvim_buf_set_keymap(0, 't', '<esc>', [[<C-\><C-n>]], opts)
-  vim.api.nvim_buf_set_keymap(0, 't', 'jk', [[<C-\><C-n>]], opts)
-  vim.api.nvim_buf_set_keymap(0, 't', '<C-h>', [[<C-\><C-n><C-W>h]], opts)
-  vim.api.nvim_buf_set_keymap(0, 't', '<C-j>', [[<C-\><C-n><C-W>j]], opts)
-  vim.api.nvim_buf_set_keymap(0, 't', '<C-k>', [[<C-\><C-n><C-W>k]], opts)
-  vim.api.nvim_buf_set_keymap(0, 't', '<C-l>', [[<C-\><C-n><C-W>l]], opts)
+vim.api.nvim_buf_set_keymap(0, 't', '<esc>', [[<C-\><C-n>]], opts)
+vim.api.nvim_buf_set_keymap(0, 't', 'jk', [[<C-\><C-n>]], opts)
+vim.api.nvim_buf_set_keymap(0, 't', '<C-h>', [[<C-\><C-n><C-W>h]], opts)
+vim.api.nvim_buf_set_keymap(0, 't', '<C-j>', [[<C-\><C-n><C-W>j]], opts)
+vim.api.nvim_buf_set_keymap(0, 't', '<C-k>', [[<C-\><C-n><C-W>k]], opts)
+vim.api.nvim_buf_set_keymap(0, 't', '<C-l>', [[<C-\><C-n><C-W>l]], opts)
 end
 
-  vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
+vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
 -----------------
 -- Normal mode --
 -----------------
@@ -82,3 +82,4 @@ map.set("n", "<leader>x", "<cmd>bd<CR>", { desc = "Close Buffer" })
 -- Hint: start visual mode with the same area as the previous area and the same mode
 map.set("v", "<", "<gv", opts)
 map.set("v", ">", ">gv", opts)
+map.set("v", "<leader>tw", "<cmd>Translate EN<CR>", { desc = "Translate selected text to English" })
