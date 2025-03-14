@@ -1,5 +1,15 @@
 local autocmd = vim.api.nvim_create_autocmd
 
+autocmd('VimLeave', {
+  pattern = "*",
+  command = "set guicursor=a:ver80-blinkon1"
+})
+
+autocmd('FileType', {
+  pattern = "qf",
+  command = "set nobuflisted"
+})
+
 -- Remove whitespace on save
 autocmd('BufWritePre', {
   pattern = '',
