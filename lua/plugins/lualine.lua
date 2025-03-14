@@ -36,7 +36,26 @@ return {
               }
           },
           lualine_b = {'branch', 'diff'},
-          lualine_c = {'filename'},
+          lualine_c = {
+            {
+              'windows',
+              show_filename_only = true,   -- Shows shortened relative path when set to false.
+              show_modified_status = true, -- Shows indicator when the window is modified.
+
+              mode = 0, -- 0: Shows window name
+                        -- 1: Shows window index
+                        -- 2: Shows window name + window index
+
+              max_length = vim.o.columns * 2 / 3, -- Maximum width of windows component,
+                                                  -- it can also be a function that returns
+                                                  -- the value of `max_length` dynamically.
+              filetype_names = {
+                TelescopePrompt = 'Telescope',
+                fzf = 'FZF',
+                alpha = 'Alpha'
+              }, -- Shows specific window name for that filetype ( { `filetype` = `window_name`, ... } )
+            }
+          },
           lualine_x = {'diagnostics', 'fileformat', 'filetype'},
           lualine_y = {'progress'},
           lualine_z = {
