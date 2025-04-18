@@ -17,7 +17,7 @@ o.expandtab = true            -- tabs are spaces, mainly because of python
 ---------------
 -- Editor
 o.number = true               -- show absolute number
-o.relativenumber = true       -- add numbers to each line on the left side
+o.relativenumber = false      -- add numbers to each line on the left side
 o.cursorline = true           -- highlight cursor line underneath the cursor horizontally
 o.splitbelow = true           -- open new vertical split bottom
 o.splitright = true           -- open new horizontal splits right
@@ -31,7 +31,7 @@ vim.wo.foldlevel = 99
 -- Searching --
 ---------------
 o.incsearch = true            -- search as characters are entered
-o.hlsearch = false            -- do not highlight matches
+o.hlsearch = true             -- highlight matches
 o.ignorecase = true           -- ignore case in searches by default
 o.smartcase = true            -- but make it case sensitive if an uppercase is entered
 
