@@ -1,24 +1,21 @@
 return {
     {
-      "williamboman/mason.nvim",
+      "mason-org/mason.nvim",
       lazy = false,
       config = function ()
         require("mason").setup()
       end
     },
     {
-      "williamboman/mason-lspconfig.nvim",
-      lazy = false,
-      config = function ()
-       require("mason-lspconfig").setup({
-          ensure_installed = {
-            "lua_ls",
-            "pylsp",
-            "clangd",
-          },
-        })
-      end
-    },
+      "mason-org/mason-lspconfig.nvim",
+      opts = {},
+      dependencies = {
+        {
+          "mason-org/mason.nvim",
+          opts = {}
+        },
+        "neovim/nvim-lspconfig",
+      },
     {
       "neovim/nvim-lspconfig",
       lazy = false,
@@ -69,4 +66,4 @@ return {
       end
     },
   }
-
+}
