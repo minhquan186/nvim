@@ -10,6 +10,11 @@ local map = vim.keymap
 -- Universal keymap --
 ----------------------
 
+-- Yank relative filepath
+map.set({"n","v"}, "<leader>yf", function ()
+  vim.cmd("let @+=@%")
+end, { desc = "Copy Relative filepath"})
+
 -- Line wrapping
 map.set({ "n", "i", "v" }, "<A-z>", function()
   vim.cmd("set wrap!")
