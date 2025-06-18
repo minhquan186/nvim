@@ -31,3 +31,10 @@ autocmd("BufReadPost", {
     end
   end,
 })
+
+-- Auto reload files on change
+vim.o.autoread = true
+autocmd({ "BufEnter", "CursorHold", "CursorHoldI", "FocusGained" }, {
+	command = "if mode() != 'c' | checktime | endif",
+	pattern = { "*" },
+})
