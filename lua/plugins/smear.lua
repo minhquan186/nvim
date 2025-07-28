@@ -16,8 +16,14 @@ return {
     -- Smears will blend better on all backgrounds.
     legacy_computing_symbols_support = false,
 
-    -- Smear cursor in insert mode.
-    -- See also `vertical_bar_cursor_insert_mode` and `distance_stop_animating_vertical_bar`.
-    smear_insert_mode = true,
-  },
+    -- Disable for insert mode
+    smear_insert_mode = false,
+
+    -- Faster smear
+    stiffness = 0.8,                      -- 0.6      [0, 1]
+    trailing_stiffness = 0.5,             -- 0.4      [0, 1]
+    damping = 0.8,                        -- 0.65     [0, 1]
+    distance_stop_animating = 0.5,        -- 0.1      > 0}
+    never_draw_over_target = true,
+  }
 }
