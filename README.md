@@ -1,6 +1,11 @@
 # Neovim config
 My personal Nvim config (Work In Progress)
 
+# Installation
+```
+git clone https://github.com/minhquan186/nvim ~/.config/nvim && nvim
+```
+
 ## TODO
 - [x] Add colorscheme
 - [x] Install whichkey
