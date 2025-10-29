@@ -1,8 +1,11 @@
 return {
-  "catppuccin/nvim",
-  name = "catppuccin",
-  priority = 1000,
-  config = function()
-    vim.cmd("colorscheme catppuccin-macchiato")
-  end
+    "KijitoraFinch/nanode.nvim",
+    priority = 1000,
+    opts = {},
+    config = function()
+      require("nanode").setup({
+        transparent = false,
+      })
+      vim.cmd("colorscheme nanode")
+    end
 }
