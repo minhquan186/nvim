@@ -7,13 +7,13 @@ git clone https://github.com/minhquan186/nvim ~/.config/nvim && nvim
 ```
 
 ## TODO
-- [x] Add colorscheme
-- [x] Install whichkey
-- [x] Install nvim-tree
-- [x] Install treesitter
-- [x] Add terminal support
-- [x] Install Telescope
-- [x] Add bufferline
-- [x] Install and config code completion
-- [x] Install and config LSP (for C/C++/Python)
+- [ ] Add colorscheme
+- [ ] Install whichkey
+- [ ] Install nvim-tree
+- [ ] Install treesitter
+- [ ] Add terminal support
+- [ ] Install Telescope
+- [ ] Add bufferline
+- [ ] Install and config code completion
+- [ ] Install and config LSP (for C/C++/Python)
 - [ ] Install and config DAP (for C/C++/Python)
