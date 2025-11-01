@@ -10,6 +10,9 @@ local map = vim.keymap
 -- Universal keymap --
 ----------------------
 
+-- Update vim.pack()
+map.set("n", "<leader>pu", "<cmd>lua vim.pack.update()<CR>")
+
 -- Yank relative filepath
 map.set({"n","v"}, "<leader>yf", function ()
   vim.cmd("let @+=@%")
@@ -39,7 +42,10 @@ vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
 -- Normal mode --
 -----------------
 
--- Hint: see `:h vim.map.set()`
+-- Scroll
+map.set("n", "<C-d>", "<C-d>zz", opts) -- Scroll down and center cursor line
+map.set("n", "<C-u>", "<C-u>zz", opts) -- Scroll up and center cursor line
+
 -- Better window navigation
 map.set("n", "<C-h>", "<C-w>h", opts)
 map.set("n", "<C-j>", "<C-w>j", opts)

@@ -1,3 +1,5 @@
-require('core.options')
-require('core.mappings')
-require('core.autocmds')
+require('plugins')
+require('options')
+require('mappings')
+require('autocmds')
+require('lsp')
