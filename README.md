@@ -3,7 +3,7 @@ My personal Nvim config (Work In Progress)
 
 # Installation
 ```
-git clone https://github.com/minhquan186/nvim ~/.config/nvim && nvim
+git clone --branch=nvim_0_12 https://github.com/minhquan186/nvim ~/.config/nvim && nvim
 ```
 
 ## TODO
