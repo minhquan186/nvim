@@ -1,15 +1,33 @@
--- Add plugins
+-----------------
+-- Add Plugins --
+-----------------
+
 vim.pack.add({
   { src = "https://github.com/folke/which-key.nvim" }, -- Whichkey
+  { src = "https://github.com/nvim-tree/nvim-web-devicons" }, -- Icons
   { src = "https://github.com/lewis6991/gitsigns.nvim" }, -- Gitsigns
+  { src = "https://github.com/nvim-mini/mini.pairs" }, -- Auto bracket
+  { src = "https://github.com/nvim-mini/mini.indentscope" }, -- Indentation highlight
+  { src = "https://github.com/nvim-mini/mini.files" }, -- File Explorer
+  { src = "https://github.com/nvim-lua/plenary.nvim" }, -- Plenary, nvim-telescope dependency
+  { src = "https://github.com/nvim-telescope/telescope.nvim" }, -- Telescope
   { src = "https://github.com/mason-org/mason.nvim" }, -- Mason for LSP server
   { src = "https://github.com/saghen/blink.cmp", version = vim.version.range("^1") }, -- Completion
 })
 
--- Plugins config
+---------------------
+-- Plugins' config --
+---------------------
+
 require("which-key").setup({})
+require("nvim-web-devicons").setup({})
 require("gitsigns").setup({ signcolumn = true })
+require("mini.pairs").setup({})
+require("mini.indentscope").setup({})
+require("mini.files").setup({})
 require("mason").setup({})
+
+-- Completion config
 require('blink.cmp').setup({
     fuzzy = { implementation = 'prefer_rust_with_warning' },
     signature = { enabled = true },
@@ -42,6 +60,9 @@ require('blink.cmp').setup({
         documentation = {
             auto_show = true,
             auto_show_delay_ms = 200,
+        },
+        ghost_text = {
+          enabled = true
         }
     },
 
@@ -52,6 +73,22 @@ require('blink.cmp').setup({
         },
     },
 
-    sources = { default = { "lsp" } }
+    sources = { default = { "lsp", "buffer", "snippets", "path" } }
 })
-return
+
+-- Telescope
+local telescope = require("telescope")
+local actions = require("telescope.actions")
+-- Action setup
+telescope.setup({
+  defaults = {
+    path_display = { "smart" },
+    mappings = {
+      i = {
+        ["<C-k>"] = actions.move_selection_previous, -- move to prev result
+        ["<C-j>"] = actions.move_selection_next, -- move to next result
+        ["<C-q>"] = actions.smart_send_to_qflist  + actions.open_qflist,
+      },
+    },
+  },
+})

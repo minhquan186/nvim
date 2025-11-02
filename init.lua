@@ -1,4 +1,5 @@
 require('plugins')
+require('colorscheme')
 require('options')
 require('mappings')
 require('autocmds')

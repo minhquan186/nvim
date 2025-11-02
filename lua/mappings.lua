@@ -1,4 +1,4 @@
--- define common options
+-- Define common options
 local opts = {
   noremap = true,      -- non-recursive
   silent = true,       -- do not show message
@@ -76,15 +76,18 @@ map.set("n", "<leader>n", "<cmd>set nu!<CR>", { desc = "toggle line number" })
 map.set("n", "<leader>rn", "<cmd>set rnu!<CR>", { desc = "toggle relative number" })
 
 -- NvimTree
-map.set("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", { desc = "nvimtree toggle window" })
-map.set("n", "<leader>e", "<cmd>NvimTreeFocus<CR>", { desc = "nvimtree focus window" })
-
--- Bufferline
-map.set("n", "<S-l>", "<CMD>BufferLineCycleNext<CR>", { desc = "Next Buffer" })
-map.set("n", "<S-h>", "<CMD>BufferLineCyclePrev<CR>", { desc = "Previous Buffer" })
+map.set("n", "<leader>e", "<cmd>lua MiniFiles.open()<CR>", { desc = "MiniFiles Navigator" })
 
 -- Buffer management
+map.set("n", "<S-l>", "<CMD>bn<CR>", { desc = "Next Buffer" })
+map.set("n", "<S-h>", "<CMD>bp<CR>", { desc = "Previous Buffer" })
 map.set("n", "<leader>x", "<cmd>bd<CR>", { desc = "Close Buffer" })
+
+-- Telescope
+map.set("n", "<leader>ff", require('telescope.builtin').find_files, { desc = "Telescope find files" })
+map.set("n", "<leader>fg", require('telescope.builtin').live_grep, { desc = "Telescope live grep" })
+map.set("n", "<leader>fb", require('telescope.builtin').buffers, { desc = "Telescope buffers" })
+map.set("n", "<leader>fh", require('telescope.builtin').help_tags, { desc = "Telescope help tags" })
 
 -----------------
 -- Visual mode --
