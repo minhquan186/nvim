@@ -27,6 +27,23 @@ require("mini.indentscope").setup({})
 require("mini.files").setup({})
 require("mason").setup({})
 
+-- Telescope
+local telescope = require("telescope")
+local actions = require("telescope.actions")
+-- Action setup
+telescope.setup({
+  defaults = {
+    path_display = { "smart" },
+    mappings = {
+      i = {
+        ["<C-k>"] = actions.move_selection_previous, -- move to prev result
+        ["<C-j>"] = actions.move_selection_next, -- move to next result
+        ["<C-q>"] = actions.smart_send_to_qflist  + actions.open_qflist,
+      },
+    },
+  },
+})
+
 -- Completion config
 require('blink.cmp').setup({
     fuzzy = { implementation = 'prefer_rust_with_warning' },
@@ -62,7 +79,7 @@ require('blink.cmp').setup({
             auto_show_delay_ms = 200,
         },
         ghost_text = {
-          enabled = true
+          enabled = false
         }
     },
 
@@ -74,21 +91,4 @@ require('blink.cmp').setup({
     },
 
     sources = { default = { "lsp", "buffer", "snippets", "path" } }
-})
-
--- Telescope
-local telescope = require("telescope")
-local actions = require("telescope.actions")
--- Action setup
-telescope.setup({
-  defaults = {
-    path_display = { "smart" },
-    mappings = {
-      i = {
-        ["<C-k>"] = actions.move_selection_previous, -- move to prev result
-        ["<C-j>"] = actions.move_selection_next, -- move to next result
-        ["<C-q>"] = actions.smart_send_to_qflist  + actions.open_qflist,
-      },
-    },
-  },
 })

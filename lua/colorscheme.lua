@@ -1,7 +1,5 @@
-vim.pack.add({ {src = "https://github.com/KijitoraFinch/nanode.nvim"} })
+vim.pack.add({ {src = "https://github.com/catppuccin/nvim"} })
 
-require("nanode").setup({
-  transparent = false
-})
+require("catppuccin").setup({})
 
-vim.cmd("colorscheme nanode")
+vim.cmd("colorscheme catppuccin-macchiato")
