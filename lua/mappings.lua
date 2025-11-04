@@ -75,7 +75,7 @@ map.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in
 map.set("n", "<leader>n", "<cmd>set nu!<CR>", { desc = "toggle line number" })
 map.set("n", "<leader>rn", "<cmd>set rnu!<CR>", { desc = "toggle relative number" })
 
--- NvimTree
+-- MiniFiles
 map.set("n", "<leader>e", "<cmd>lua MiniFiles.open()<CR>", { desc = "MiniFiles Navigator" })
 
 -- Buffer management
