@@ -9,6 +9,7 @@ vim.pack.add({
   { src = "https://github.com/nvim-mini/mini.pairs" }, -- Auto bracket
   { src = "https://github.com/nvim-mini/mini.indentscope" }, -- Indentation highlight
   { src = "https://github.com/nvim-mini/mini.files" }, -- File Explorer
+  { src = "https://github.com/nvim-mini/mini.animate" }, -- Animation
   { src = "https://github.com/nvim-lua/plenary.nvim" }, -- Plenary, nvim-telescope dependency
   { src = "https://github.com/nvim-telescope/telescope.nvim" }, -- Telescope
   { src = "https://github.com/mason-org/mason.nvim" }, -- Mason for LSP server
@@ -28,6 +29,18 @@ require("mini.pairs").setup({})
 require("mini.indentscope").setup({})
 require("mini.files").setup({})
 require("mason").setup({})
+
+-- Animation
+local animate = require("mini.animate")
+animate.setup({
+  cursor = {
+     -- Animate for 200 milliseconds with linear easing
+      timing = animate.gen_timing.linear({ duration = 200, unit = 'total' }),
+
+      -- Animate with shortest line for any cursor move
+      path = animate.gen_path.line({}),
+  }
+})
 
 -- Telescope
 local telescope = require("telescope")
@@ -134,7 +147,7 @@ require('lualine').setup({
         show_filename_only = true,   -- Shows shortened relative path when set to false.
         show_modified_status = true, -- Shows indicator when the window is modified.
 
-        mode = 0, -- 0: Shows window name
+        mode = 2, -- 0: Shows window name
                   -- 1: Shows window index
                   -- 2: Shows window name + window index
 
@@ -173,7 +186,6 @@ require('lualine').setup({
   winbar = {},
   inactive_winbar = {},
   extensions = {
-    "nvim-tree",
     "mason",
     "nvim-dap-ui",
   }

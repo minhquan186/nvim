@@ -42,6 +42,9 @@ vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
 -- Normal mode --
 -----------------
 
+-- General clear highlights
+map.set("n", "<Esc>", "<cmd>noh<CR>", opts)
+
 -- Scroll
 map.set("n", "<C-d>", "<C-d>zz", opts) -- Scroll down and center cursor line
 map.set("n", "<C-u>", "<C-u>zz", opts) -- Scroll up and center cursor line
