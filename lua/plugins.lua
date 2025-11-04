@@ -24,11 +24,16 @@ vim.pack.add({
 
 require("which-key").setup({})
 require("nvim-web-devicons").setup({})
-require("gitsigns").setup({ signcolumn = true })
 require("mini.pairs").setup({})
 require("mini.indentscope").setup({})
 require("mini.files").setup({})
 require("mason").setup({})
+
+-- Gitsigns
+require("gitsigns").setup({
+  signcolumn = true,
+  current_line_blame = true,
+})
 
 -- Animation
 local animate = require("mini.animate")
