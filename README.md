@@ -1,10 +1,10 @@
-# Neovim config
-My personal Nvim config
+# My personal Nvim config
 
-# Installation
+## Installation
 ```
 git clone --branch=nvim_0_12 https://github.com/minhquan186/nvim ~/.config/nvim && nvim
 ```
+## Features
 | Plugin | Description | Repository |
 |--------|-------------|-----------|
 | which-key.nvim | Displays available keybindings in popup | [folke/which-key.nvim](https://github.com/folke/which-key.nvim) |
